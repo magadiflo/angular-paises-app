@@ -19,7 +19,7 @@ const routes: Routes = [
         RouterModule.forRoot(routes),
     ],
     exports: [
-        RouterModule,
+        RouterModule, //* Nos permite además, trabajar con el routerLink
     ],
 })
 export class AppRoutingModule {

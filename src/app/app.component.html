@@ -2,12 +2,22 @@
     <div class="col-3">
         <h2 class="border-bottom pb-1 mb-3">Búsquedas</h2>
         <ul class="list-group">
-            <li class="list-group-item active">Buscar país</li>
-            <li class="list-group-item">Por región</li>
-            <li class="list-group-item">Por capital</li>
+            <li class="list-group-item pointer" [routerLink]="['']" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">Buscar país</li>
+            <li class="list-group-item pointer" [routerLink]="['/region']" routerLinkActive="active">Por región</li>
+            <li class="list-group-item pointer" [routerLink]="['/capital']" routerLinkActive="active">Por capital</li>
         </ul>
     </div>
     <div class="col">
         <router-outlet></router-outlet>
     </div>
 </div>
+
+<!-- * [routerLinkActiveOptions]="{exact: true}", debemos agregarle esta opción ya que 
+* como definimos en el app-routing.module.ts, a la ruta '' como pathMatch: full, es por eso que siempre
+* se muestra seleccionada, a pesar de que se cambia de ruta. Y esto es, como se escribió en el
+* el comentario de app-routing.module.ts (===> full) porque la ruta vacía ('') es prefijo
+* de cualquier URL.
+* 
+* Agregándole esta opción, le decimos que la ruta debe ser exactamente
+* igual a la ruta '' para que use el routerLinkActive-->
