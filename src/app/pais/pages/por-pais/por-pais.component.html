@@ -6,7 +6,7 @@
         </form>
     </div>
 </div>
-<div class="row">
+<div *ngIf="!hayError" class="row">
     <div class="col">
         <table class="table table-striped">
             <thead>
@@ -30,6 +30,6 @@
         </table>
     </div>
 </div>
-<div class="alert alert-danger">
-    No se encontró resultados con el término asdfasdf
+<div *ngIf="hayError" class="alert alert-danger">
+    No se encontró resultados con <b><i>{{ termino }}</i></b>
 </div>
