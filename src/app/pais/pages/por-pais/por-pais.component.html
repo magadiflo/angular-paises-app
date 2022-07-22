@@ -1,1 +1,35 @@
-<p>por-pais works!</p>
+<h2 class="border-bottom mb-2 pb-1">Por país</h2>
+<div class="row pb-3 mb-2 border-bottom">
+    <div class="col">
+        <form (ngSubmit)="buscar()" autocomplete="off">
+            <input type="text" name="termino" [(ngModel)]="termino" class="form-control" placeholder="Ingresa país...">
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Bandera</th>
+                    <th>Nombre</th>
+                    <th>Población</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Bandera</td>
+                    <td>Perú</td>
+                    <td>30,000,000</td>
+                    <td><a href="#">Ver...</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="alert alert-danger">
+    No se encontró resultados con el término asdfasdf
+</div>
