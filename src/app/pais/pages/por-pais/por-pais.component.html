@@ -6,7 +6,7 @@
         </form>
     </div>
 </div>
-<div *ngIf="!hayError" class="row">
+<div *ngIf="paises.length > 0" class="row">
     <div class="col">
         <table class="table table-striped">
             <thead>
@@ -19,12 +19,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Bandera</td>
-                    <td>Perú</td>
-                    <td>30,000,000</td>
-                    <td><a href="#">Ver...</a></td>
+                <tr *ngFor="let pais of paises">
+                    <td>{{ pais.alpha2Code }}</td>
+                    <td><img [src]="pais.flags.png" alt="Bandera de {{ pais.name }}" class="img-table"></td>
+                    <td>{{ pais.name }}</td>
+                    <td>{{ pais.population | number }}</td>
+                    <td><a [routerLink]="['/pais', pais.alpha2Code]">Ver...</a></td>
                 </tr>
             </tbody>
         </table>

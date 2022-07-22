@@ -11,7 +11,8 @@ import { Country } from '../../interfaces/pais.interface';
 })
 export class PorPaisComponent implements OnInit {
 
-  termino: string = 'Hola mundo';
+  paises: Country[] = [];
+  termino: string = '';
   hayError: boolean = false;
 
   constructor(private paisService: PaisService) { }
@@ -25,10 +26,11 @@ export class PorPaisComponent implements OnInit {
     this.paisService.buscarPais(this.termino)
       .subscribe({
         next: (paises: Country[]) => {
-          console.log(paises);
+          this.paises = paises;
         },
         error: err => {
           this.hayError = true;
+          this.paises = [];
         }
       });
   }
