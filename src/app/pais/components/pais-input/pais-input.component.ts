@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit, Input } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
@@ -9,6 +9,8 @@ import { debounceTime } from 'rxjs/operators';
   ]
 })
 export class PaisInputComponent implements OnInit {
+
+  @Input() placeholder: string = '';
 
   //* Por lo general a las variables que creemos y que serán emitidas se les antepone el on...onEnter, etc..
   @Output() onEnter: EventEmitter<string> = new EventEmitter();
