@@ -36,4 +36,9 @@ export class PorPaisComponent implements OnInit {
       });
   }
 
+  sugerencias(term: string): void {
+    this.hayError = false;
+    //TODO: crear sugerencias
+  }
+
 }
