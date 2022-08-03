@@ -24,5 +24,9 @@ export class PaisService {
   getPaisPorAlpha(code: string): Observable<Country> {
     return this.http.get<Country>(`${this.apiUrl}/alpha/${code}`);
   }
+
+  buscarRegion(region: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.apiUrl}/region/${region}`);
+  }
   
 }
