@@ -9,8 +9,8 @@
         <!--* [ngClass]="{'btn-primary': region === regionActiva,'btn-outline-primary': region !== regionActiva}" -->
 
         <button type="button" *ngFor="let region of regiones" (click)="activarRegion(region)"
-            class="btn btn-outline-primary">
-            {{ region }}
+            class="btn btn-outline-primary" [ngClass]="{ 'active': region === regionActiva }">
+            {{ region | titlecase }}
         </button>
     </div>
 </div>
