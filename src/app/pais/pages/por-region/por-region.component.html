@@ -1,1 +1,16 @@
-<p>por-region works!</p>
+<h3>Buscar por región</h3>
+<strong class="d-block border-bottom mb-3">{{ regionActiva | titlecase }}</strong>
+
+<h5>Seleccione la región</h5>
+<div class="row">
+    <div class="col">
+
+        <!--* [class.btn-primary]="region === regionActiva" -->
+        <!--* [ngClass]="{'btn-primary': region === regionActiva,'btn-outline-primary': region !== regionActiva}" -->
+
+        <button type="button" *ngFor="let region of regiones" (click)="activarRegion(region)"
+            class="btn btn-outline-primary">
+            {{ region }}
+        </button>
+    </div>
+</div>
